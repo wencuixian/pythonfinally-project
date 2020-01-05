@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>世界少儿抚养比与GDP的关系</title>
+	<style>
+	.dataframe{width:100%;}
+	</style>
+</head>
+<body>
+<center>
+<b>从世界儿童抚养比看各国家的少年儿童的负担系数问题。下面请选择你要了解的地区。</b>
+
+
+<form method="POST" action="/hurun">
+    <select name="the_region_selected">
+        {% for item in the_select_region %}
+            <option value="{{ item }}">{{ item }}</option>
+        {% endfor %}
+    </select>
+<p><input value='Do it!' type='SUBMIT'></p>
+</form>
+</center>
+{{ the_plot_all|safe }}
+{{ the_res|safe }}
+
+
+</body>
+</html>
